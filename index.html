@@ -11,31 +11,36 @@
 <body>
 
 <!--
-index sidan ska innehålla ett område (en div) där det ens horoskopet skrivs ut när sidan laddas. 
-Den ska dessutom innehålla en input för en ens födelsenummer och tre knappar:
-knapparna ska ha varsin onClick som kör varsin Javascriptfunktion:
 Knapp: "spara mitt horoskop"
 onClick: ska göra ett anrop via fetch eller $.ajax till addHoroscope.php med innehållet i input:en. 
-Efter anropet, ska innehållet i div:en uppdateras.
-Om ni vill ha stilpoäng så ska denna knapp bara synas om horoskopet inte är sparat ännu, eller annars 
-inaktiveras - detta är inget krav
+Efter anropet, ska innehållet i div:en uppdateras. (POST)
+
 Knapp: "uppdatera mitt horoskop"
 onClick: ska göra ett anrop via fetch eller $.ajax till updateHoroscope.php med innehållet i input:en. 
-Efter anropet ska innehållet i div:en uppdateras.
-Om ni vill ha stilpoäng så ska denna knapp inte synas eller vara inaktiverat om horoskopet inte är 
-sparat ännu - detta är inget krav
+Efter anropet ska innehållet i div:en uppdateras. (PUT)
+
 Knapp: "radera mitt horoskop"
 onClick: ska göra ett anrop via fetch eller $.ajax till deleteHoroscope.php. Efter anropet ska 
-innehållet i div:en uppdateras om horoskopet togs bort.
-Om ni vill ha stilpoäng så ska denna knapp inte synas eller vara inaktiverat om horoskopet inte är 
-sparat ännu - detta är inget krav
-       
+innehållet i div:en uppdateras om horoskopet togs bort. (DEL)
+
 När man först går ut på sidan ska även div:en uppdateras via ett anrop till viewHoroscope, det är 
 smart att spara detta anrop i en funktion och anropa det i slutet av varje knapps onClick funktion.
 
 
 -->
 
+<div class="horoDiv">Mitt Horoskop</div>
+<form action="/myhoroscope.php">
+    Personnummer (6 siffror)<br>
+    <input type="text" name="number" value=""><br>
+    <br>
+    <input type="submit" value="Spara Mitt Horoskop" onclick="saveHoroscope()"><br>
+    <input type="submit" value="Uppdatera Mitt Horoskop" onclick="updateHoroscope()"><br>
+    <input type="submit" value="Radera Mitt Horoskop" onclick="deleteHoroscope()"><br>
+</form>
+
+<!-- Här skrivs horoskopet ut när sidan laddas -->
+<div class="resultDiv"></div>
 
 
 
