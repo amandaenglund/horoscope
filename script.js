@@ -21,7 +21,7 @@ $(document).ready(function(){
     //Efter anropet, ska innehållet i div:en uppdateras. (POST)
     //type eller method??
 
-    $("#saveKnapp").on("click", saveHoroscope());
+    $("#saveKnapp").on("click", function() { saveHoroscope(); });
 
 
     function saveHoroscope(){
@@ -51,7 +51,7 @@ $(document).ready(function(){
     //Efter anropet ska innehållet i div:en uppdateras. (PUT)
     //type eller method??
 
-    $("#updateKnapp").on("click", updateHoroscope());
+    $("#updateKnapp").on("click", function() { updateHoroscope(); });
 
 
     function updateHoroscope(){
@@ -79,7 +79,7 @@ $(document).ready(function(){
     //innehållet i div:en uppdateras om horoskopet togs bort. (DEL)
     //type eller method??
 
-    $("#deleteKnapp").on("click", deleteHoroscope());
+    $("#deleteKnapp").on("click", function() { deleteHoroscope(); });
 
 
     function deleteHoroscope(){
