@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-
-
 <!--
 sidan ska bara gå att begära via DELETE, den ska ta bort det sparade horoskopet i $_SESSION och 
 echo:a true. Om inget finns sparat ska den echo:a false.
@@ -18,12 +5,15 @@ echo:a true. Om inget finns sparat ska den echo:a false.
 
 -->
 <?php
-
-
-
-
-
-?>
+    session_start();
     
-</body>
-</html>
+    if ($_SERVER['REQUEST_METHOD'] == 'DELETE'){
+        if(isset($_SESSION["myHoroscope"])){
+            unset($_SESSION["myHoroscope"]);
+            echo "Delete: True</br>";
+        }
+        else{
+            echo "Delete: False</br>";
+        }
+    }
+?>

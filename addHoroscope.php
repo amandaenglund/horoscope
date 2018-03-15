@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-
-
 <!--
 sidan ska bara gå att begära via POST, den ska kolla efter ett födelsedatum i $_POST, räkna ut 
 vilket horoskop födelsedatumet tillhör och spara det i $_SESSION.
@@ -21,12 +8,18 @@ Sidan ska inte använda echo eller skriva någon output förutom true eller f
 på om horoskopet sparades.
 -->
 <?php
+    session_start();
 
+    include "./checkHoroscope.php";
 
-
-
-
+    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $month = substr($_POST["birthDate"], 2, 2);
+        $day = substr($_POST["birthDate"], 4, 2);
+            
+    if(!isset($_SESSION["myHoroscope"])){
+        $_SESSION["myHoroscope"] = checkHoroscope($month, $day);
+    }
+    else{
+    }
+    }
 ?>
-    
-</body>
-</html>

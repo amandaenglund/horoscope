@@ -12,24 +12,21 @@
 <body>
 
 <div class="container">
-<div class="horoDiv">
     <img src="./horoscope.png" alt="">
     <h1>Mitt Horoskop</h1>
-</div>
-<form action="./viewHoroscope.php" method="POST">
+
     <h3>Personnummer (6 siffror)</h3><br>
     <input type="number" name="number" value="" id="datum"><br>
     <br>
-    <input type="submit" value="Spara Mitt Horoskop" onclick="saveHoroscope()"><br>
-    <input type="submit" value="Uppdatera Mitt Horoskop" onclick="updateHoroscope()"><br>
-    <input type="submit" value="Radera Mitt Horoskop" onclick="deleteHoroscope()"><br>
-</form>
+    <button id="knapp" onclick="saveHoroscope()">Spara Mitt Horoskop</button><br>
+    <button id="knapp" onclick="updateHoroscope()">Uppdatera Mitt Horoskop</button><br>
+    <button id="knapp" onclick="deleteHoroscope()">Radera Mitt Horoskop</button><br>
+
 
 <!-- Här skrivs horoskopet ut när sidan laddas -->
 <div class="resultDiv"></div>
 
 </div>
-
     
 </body>
 </html>
