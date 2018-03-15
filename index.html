@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Horoscope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto|Stalemate" rel="stylesheet">    
-    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
 
@@ -18,9 +19,9 @@
     <h3>Personnummer (6 siffror)</h3><br>
     <input type="number" name="number" value="" id="datum"><br>
     <br>
-    <button id="knapp" onclick="saveHoroscope()">Spara Mitt Horoskop</button><br>
-    <button id="knapp" onclick="updateHoroscope()">Uppdatera Mitt Horoskop</button><br>
-    <button id="knapp" onclick="deleteHoroscope()">Radera Mitt Horoskop</button><br>
+    <button id="saveKnapp">Spara Mitt Horoskop</button><br>
+    <button id="updateKnapp">Uppdatera Mitt Horoskop</button><br>
+    <button id="deleteKnapp">Radera Mitt Horoskop</button><br>
 
 
 <!-- Här skrivs horoskopet ut när sidan laddas -->

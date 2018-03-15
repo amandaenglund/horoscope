@@ -6,7 +6,7 @@ $(document).ready(function(){
     function printHoroscope(){
 
         $.ajax({
-            type: 'GET',
+            method: 'GET',
             url: "./viewHoroscope.php",
         })
         .done(function(data){
@@ -17,10 +17,12 @@ $(document).ready(function(){
     
 
 
-
     //ska göra ett anrop via $.ajax till addHoroscope.php med innehållet i input:en. 
     //Efter anropet, ska innehållet i div:en uppdateras. (POST)
     //type eller method??
+
+    $("#saveKnapp").on("click", saveHoroscope());
+
 
     function saveHoroscope(){
 
@@ -29,7 +31,7 @@ $(document).ready(function(){
 
             $.ajax(
             {
-                type: 'POST',
+                method: 'POST',
                 url: "./addHoroscope.php",
                 data: {birthDate: birthDate}
             })
@@ -49,6 +51,9 @@ $(document).ready(function(){
     //Efter anropet ska innehållet i div:en uppdateras. (PUT)
     //type eller method??
 
+    $("#updateKnapp").on("click", updateHoroscope());
+
+
     function updateHoroscope(){
 
         var birthDate = $('#datum').val();
@@ -56,7 +61,7 @@ $(document).ready(function(){
 
             $.ajax(
             {
-                type: 'PUT',
+                method: 'PUT',
                 url: "./updateHoroscope.php",
                 data: {birthDate: birthDate}
             })
@@ -74,12 +79,15 @@ $(document).ready(function(){
     //innehållet i div:en uppdateras om horoskopet togs bort. (DEL)
     //type eller method??
 
+    $("#deleteKnapp").on("click", deleteHoroscope());
+
+
     function deleteHoroscope(){
 
         var birthDate = $('#datum').val();
 
         $.ajax({
-            type: 'DELETE',
+            method: 'DELETE',
             url: "./deleteHoroscope.php",
         })
         .done(function(data){
