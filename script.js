@@ -10,7 +10,7 @@ $(document).ready(function(){
             url: "./viewHoroscope.php",
         })
         .done(function(data){
-            $('#resultDiv').html(data);
+            $('.resultDiv').html(data);
         })
 
     }
@@ -36,16 +36,12 @@ $(document).ready(function(){
                 data: {birthDate: birthDate}
             })
             .done(function(data){
-                $('#resultDiv').append(data);
+                printHoroscope();
             })
         }
 
-        printHoroscope();
     }
     
-
-
-
 
     //ska göra ett anrop via $.ajax till updateHoroscope.php med innehållet i input:en. 
     //Efter anropet ska innehållet i div:en uppdateras. (PUT)
@@ -66,11 +62,10 @@ $(document).ready(function(){
                 data: {birthDate: birthDate}
             })
             .done(function(data){
-                $('#resultDiv').append(data);
+                printHoroscope();
             })
         }
 
-        printHoroscope();
     }
 
 
@@ -91,10 +86,9 @@ $(document).ready(function(){
             url: "./deleteHoroscope.php",
         })
         .done(function(data){
-            $('#resultDiv').append(data);
+            printHoroscope();
         })
 
-        printHoroscope();
     }
 
     

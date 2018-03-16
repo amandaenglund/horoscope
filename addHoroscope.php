@@ -10,7 +10,5 @@
     if(!isset($_SESSION["myHoroscope"])){
         $_SESSION["myHoroscope"] = checkHoroscope($month, $day);
     }
-    else{
-    }
     }
 ?>

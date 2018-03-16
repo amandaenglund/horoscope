@@ -53,6 +53,8 @@ function checkHoroscope($month, $day){
             $myHoroscope = "<h3>Fisk</h3>";
         }
         
-        return $myHoroscope;
+        if(isset($myHoroscope)) {
+            return $myHoroscope;
+        }
 }
 ?>
